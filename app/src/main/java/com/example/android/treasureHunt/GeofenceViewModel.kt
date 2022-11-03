@@ -22,6 +22,10 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 
 /*
+ * 02 It is the ViewModel associated with HuntMainActivity.kt
+ * This class handles the LiveData and determines which hint should be shown on screen.
+ *
+ *
  * This class contains the state of the game.  The two important pieces of state are the index
  * of the geofence, which is the geofence that the game thinks is active, and the state of the
  * hint being shown.  If the hint matches the geofence, then the Activity won't update the geofence
@@ -39,7 +43,7 @@ class GeofenceViewModel(state: SavedStateHandle) : ViewModel() {
         get() = _geofenceIndex
 
     val geofenceHintResourceId = Transformations.map(geofenceIndex) {
-        val index = geofenceIndex?.value ?: -1
+        val index = geofenceIndex.value ?: -1
         when {
             index < 0 -> R.string.not_started_hint
             index < GeofencingConstants.NUM_LANDMARKS -> GeofencingConstants.LANDMARK_DATA[geofenceIndex.value!!].hint

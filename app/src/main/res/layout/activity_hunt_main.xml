@@ -14,6 +14,11 @@
   ~ limitations under the License.
   -->
 
+<!--
+    04 Main Layout
+    This currently displays an image of an Android but you will implement it to display a hint.
+-->
+
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

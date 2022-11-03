@@ -16,33 +16,21 @@
 
 package com.example.android.treasureHunt
 
-import android.app.PendingIntent
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.Manifest
 import android.annotation.TargetApi
-import android.content.IntentSender
-import android.net.Uri
+import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.SavedStateViewModelFactory
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.treasureHunt.databinding.ActivityHuntMainBinding
-import com.google.android.gms.common.api.ResolvableApiException
-import com.google.android.gms.location.Geofence
 import com.google.android.gms.location.GeofencingClient
-import com.google.android.gms.location.GeofencingRequest
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationServices
-import com.google.android.gms.location.LocationSettingsRequest
-import com.google.android.material.snackbar.Snackbar
 
 /**
+ * 01 Main File
+ * This class contains skeleton code for functions that handle permissions, adding geofences and removing geofences.
+ *
+ *
  * The Treasure Hunt app is a single-player game based on geofences.
  *
  * This app demonstrates how to create and remove geofences using the GeofencingApi. Uses an
@@ -81,17 +69,6 @@ class HuntMainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         checkPermissionsAndStartGeofencing()
-    }
-
-    /*
- *  When we get the result from asking the user to turn on device location, we call
- *  checkDeviceLocationSettingsAndStartGeofence again to make sure it's actually on, but
- *  we don't resolve the check to keep the user from seeing an endless loop.
- */
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        // TODO: Step 7 add code to check that the user turned on their device location and ask
-        //  again if they did not
     }
 
     /*

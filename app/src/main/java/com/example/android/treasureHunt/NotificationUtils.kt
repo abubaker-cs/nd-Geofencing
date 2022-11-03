@@ -27,6 +27,10 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 
 /*
+ * 03 Handles notification Popup
+ *  When you enter a geofence, a notification pops up! This class creates and styles that notification.
+ *
+ *
  * We need to create a NotificationChannel associated with our CHANNEL_ID before sending a
  * notification.
  */
