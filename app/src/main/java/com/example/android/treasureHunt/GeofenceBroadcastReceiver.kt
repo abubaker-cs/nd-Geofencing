@@ -61,7 +61,7 @@ class GeofenceBroadcastReceiver : BroadcastReceiver() {
             val geofencingEvent = GeofencingEvent.fromIntent(intent)
 
             // In the case that there is an error, you will want to understand what went wrong
-            if (geofencingEvent!!.hasError()) {
+            if (geofencingEvent.hasError()) {
 
                 // Save a variable with the error message obtained through the geofences error code.
                 val errorMessage = errorMessage(context, geofencingEvent.errorCode)
